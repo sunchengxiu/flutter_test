@@ -15,6 +15,22 @@ main(List<String> args) {
   final s = Student._withName("sunchengxiu");
   final s1 = Student._withName("sunchengxiu");
   print(identical(s1, s));
+
+  // set get 方法
+  final p3 = Person("sunchengixu");
+  p3.setName = "sunbaofu";
+  print(p3.getName);
+
+  // 抽象类,见下
+
+  // 隐式接口，见下
+  // 默认情况下，所有类都是隐式接口
+
+  // 混入,定义混入不能用class，mixin 关键字定义，with 实现
+  final mm = mman();
+  mm.running();
+  mm.eatting();
+
 }
 
 class Person {
@@ -30,6 +46,17 @@ class Person {
     // TODO: implement toString
     return "name is $name,age is $age";
   }
+  // set 方法
+  // set setName(String name){
+  //   this.name = name;
+  // }
+  set setName(String name) => this.name = name;
+
+  // String get getName{
+  //   return this.name;
+  // }
+
+  String get getName => name;
 }
 
 // 常量构造函数
@@ -57,4 +84,87 @@ class Student {
   }
 
   Student(this.name);
+}
+
+class Teacher {
+  String name;
+  Teacher(this.name);
+}
+
+class Stu extends Teacher {
+  int age;
+  // 需要调用一下父类
+  Stu(String name,this.age): super(name);
+}
+
+// 抽象类，方法可以没有实现，普通的类，方法需要有实现
+// 抽象类不能实例化
+// 可以通过工厂实例化
+abstract class AbsClass {
+  void run();
+  
+
+} 
+
+// 继承自抽象类之后，必须实现抽象类的抽象方法
+class SubAbs extends AbsClass {
+  @override
+  void run() {
+    print("im run");
+  }
+  
+}
+
+
+// 接口
+class run {
+  void running(){
+
+  }
+}
+
+class fly {
+  void flying() {
+
+  }
+}
+// 必须实现接口所有的方法
+class man implements run,fly{
+  @override
+  void running() {
+    // TODO: implement running
+  }
+
+  @override
+  void flying() {
+    // TODO: implement flying{
+
+    }
+  
+}
+
+mixin Runner {
+  void running(){
+    print("runner runnint");
+  }
+}
+
+mixin Eatter {
+  void eatting(){
+    print("eatter eating");
+  }
+}
+
+class mman with Runner,Eatter {
+ 
+  // void eatting() {
+  //   print("mman eeatting");
+  // }
+
+  void eatting() {
+    // TODO: implement eatting
+    print("mman eeatting");
+    // super.eatting();
+  }
+  
 }
