@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,7 +7,10 @@ void main() {
     MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text("app bar"),
+            title: Text(
+              "app bar",
+              style: TextStyle(fontSize: 30),
+            ),
           ),
           body: Center(
             child:Text(
