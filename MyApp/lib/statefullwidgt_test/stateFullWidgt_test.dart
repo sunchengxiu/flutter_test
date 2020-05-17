@@ -21,12 +21,14 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         title: Text("column 练习"),
       ),
-      body: MyHomeBody(),
+      body: MyHomeBody("路虎揽胜"),
     );
   }
 }
 
 class MyHomeBody extends StatefulWidget {
+  final String name;
+  MyHomeBody(this.name);
   @override
   State<StatefulWidget> createState() {
     return _MyHomeBodyState();
@@ -45,6 +47,7 @@ class _MyHomeBodyState extends State<MyHomeBody> {
         children: <Widget>[
           _getButtons(),
           Text("当前计数:$_cout"),
+          Text("商品名称:${this.widget.name}"),
         ],
       ),
     );
