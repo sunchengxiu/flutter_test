@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,8 +40,21 @@ class MyHomeBody extends StatefulWidget {
   _MyHomeState createState() => _MyHomeState();
 }
 
-// 富文本
+
+// 加载本地图片
 class _MyHomeState extends State<MyHomeBody> {
+  @override
+  Widget build(BuildContext context) {
+    // 加载本地图片，需要在pubspec.yaml 中加载，然后执行 pub get
+    // yaml 文件中 assets: 前面有个空格需要去掉
+    return Image.asset("assets/images/2.0x/image.png");
+  }
+
+}
+
+
+// 富文本
+class _MyHomeState3 extends State<MyHomeBody> {
   @override
   Widget build(BuildContext context) {
     return MyRichButtons;
