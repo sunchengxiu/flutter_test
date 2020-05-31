@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'dart:core';
 import 'package:douapp/widgets/dash_line.dart';
+import 'package:douapp/pages/main/main.dart';
 void main() {
   runApp(MyApp());
 }
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+        home: SCXMainPage(),
 // 测试虚线
-      home: buildDashLine(),
+//      home: buildDashLine(),
 // 测试星星
 //      home: SCXStar(grade: 4.5),
     );
