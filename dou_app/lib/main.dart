@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+//        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        highlightColor: Colors.transparent,// 取消点击有阴影的那种效果
+        splashColor: Colors.transparent// 取消点击有阴影的那种效果
       ),
         home: SCXMainPage(),
 // 测试虚线

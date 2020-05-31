@@ -15,15 +15,24 @@ class _SCXMainPageState extends State<SCXMainPage> {
       // 重叠界面
       body: IndexedStack(
         index: _currentIndex,
-        children: <Widget>[],
+        children: pages,
       ),
       // 下面的 navigation bar
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        // 选中和未选中字体的大小
         selectedFontSize: 14,
         unselectedFontSize: 14,
+        // 选中文字颜色
+        selectedItemColor: Colors.red,
         // 文字过长需要设置这个，否则文字不显示
         type: BottomNavigationBarType.fixed,
-        items: items
+        items: items,
+        onTap: (index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
