@@ -118,3 +118,4 @@ class SCXCustomClipper extends CustomClipper<Rect> {
     return oldClipper.clipFrom != this.clipFrom;
   }
 }
+
